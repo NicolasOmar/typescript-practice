@@ -1,0 +1,12 @@
+{
+  "name": "1-base-project",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "npm run build && lite-server",
+    "build": "tsc app.ts"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
