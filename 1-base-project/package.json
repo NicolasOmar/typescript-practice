@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "npm run build && lite-server",
-    "build": "tsc app.ts"
+    "start": "lite-server -c configs/server.json",
+    "build": "tsc public/scripts/app.ts"
   },
   "devDependencies": {
     "lite-server": "^2.6.1"

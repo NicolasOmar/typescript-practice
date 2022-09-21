@@ -1,12 +1,8 @@
 {
   "name": "typescript-practice",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "Repository created to record my practice learning Typescript",
   "main": "index.js",
-  "scripts": {
-    "setup-base-project": "cd ./1-base-project && npm i",
-    "setup-all": "npm i -g typescript && npm run setup-base-project"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NicolasOmar/typescript-practice.git"
@@ -16,5 +12,15 @@
   "bugs": {
     "url": "https://github.com/NicolasOmar/typescript-practice/issues"
   },
-  "homepage": "https://github.com/NicolasOmar/typescript-practice#readme"
+  "homepage": "https://github.com/NicolasOmar/typescript-practice#readme",
+  "scripts": {
+    "setup-base-project": "cd ./1-base-project && npm i",
+    "setup-all": "npm i -g typescript && npm run setup-base-project",
+    "prepare": "husky install",
+    "update-version": "node scripts/update-version.js"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "prompts": "^2.4.2"
+  }
 }
