@@ -26,7 +26,9 @@ npm start
 ## Repo Structure & what i learned in each exercise
  - Base project (`1-base-project` folder)
    - Create, code and compile a `.ts` file into javascript
-   - Understanding of `Core Types`: `number`, `string` and `boolean`
+   - Understanding of `Core Types` like `number`, `string`, `boolean`, `array` and `object`
+   - Understanding of `Tuples`, `Enums`, `Union` and `Literal/Custom` Types
+   - Understanding of `void` and `undefined` Types
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
