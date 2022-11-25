@@ -1,10 +1,11 @@
 {
-  "name": "1-base-project",
+  "name": "2-second-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "lite-server -c configs/server.json",
-    "build": "tsc public/scripts/app.ts"
+    "build": "tsc",
+    "build:watch": "tsc -w"
   },
   "devDependencies": {
     "lite-server": "^2.6.1"

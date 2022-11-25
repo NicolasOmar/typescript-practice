@@ -1,0 +1,12 @@
+{
+  "name": "1-basics",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "start": "lite-server -c configs/server.json",
+    "build": "tsc public/scripts/app.ts"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
