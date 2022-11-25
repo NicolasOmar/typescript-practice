@@ -28,7 +28,7 @@ npm start
    - Create, code and compile a `.ts` file into javascript
    - Understanding of `Core Types` like `number`, `string`, `boolean`, `array` and `object`
    - Understanding of `Tuples`, `Enums`, `Union` and `Literal/Custom` Types
-   - Understanding of `void` and `undefined` Types
+   - Understanding of `void`, `undefined`, `unknown` and `never` Types
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |

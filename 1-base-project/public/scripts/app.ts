@@ -79,5 +79,41 @@ console.info(
 
 // FUNCTION TYPE is used to return another function
 let returnFunction: Function
-
+// In the following cases, you return an empty function and a functions without been executed
 returnFunction = () => {}
+returnFunction = function () {}
+returnFunction = returnUndefined
+
+// Here the function needs a specific type of function which will recieve two numbers and return another number
+let returnNumberFunction: (a: number, b: number) => number
+const addNumbers = (n1: number, n2: number) => (n1 + n2)
+returnNumberFunction = addNumbers
+
+// On this case, you using a function callback as a parameter wich will recieve a result and handle it without care about what is going to return
+let addAndHandle = (n1: number, n2: number, cb: (n3: number) => void) => cb(n1 + n2)
+addAndHandle(3, 5, printResult)
+
+// UNKNOWN TYPE, we dont know yet what the user is going to input
+let userInput: unknown
+let userName: string
+
+userInput = 5
+userInput = '5'
+userInput = null
+/* Unknown type is used to check other variables types before assign its value.
+ * If a string variable tries to be assigned to a unknown one, it will break the compilation
+ * unless you check its typeof before
+ * Is a better alternative than use any (for previous type checking)
+*/
+if (typeof userInput === 'string') {
+  userName = userInput
+}
+
+/* VOID/NEVER TYPE is used when you want a function does not retun any value
+ * It can be used for special cases as error handling, because it does not return
+ * a value, it just throws an error
+*/
+const generateError = (message: string, code: number): void | never => {
+  throw { message, errorCode: code }
+}
+generateError('An error ocurred!', 500)
