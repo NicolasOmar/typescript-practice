@@ -31,8 +31,8 @@ npm start
    - Understanding of `void`, `undefined`, `unknown` and `never` Types
  - Second project (`2-second-project` folder)
    - Adding `watch mode` to mantain updated changes and check possible errors before hand
-   - Create a typescript configuration with `tsc --init`
-   - Configure files to be compiled with `include` and `exclude`
+   - Create a typescript configuration file with `tsc --init` and tweak for a custom config
+   - Understand how Typescript compiles ES6+ code
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
