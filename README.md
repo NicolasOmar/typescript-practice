@@ -15,7 +15,8 @@ npm run setup-all
 | App Setup | Command |
 | ------ | ------ |
 | All | `npm run setup-all` |
-| Base project | `npm run setup-base-project` |
+| Basics | `npm run setup-basics` |
+| Configs | `npm run setup-configs` |
 
 ## How to run it
 To run any specific exercise, execute the following command in the project´s folder:
@@ -24,11 +25,15 @@ npm start
 ```
 
 ## Repo Structure & what i learned in each exercise
- - Base project (`1-base-project` folder)
+ - Basics (`1-basics` folder)
    - Create, code and compile a `.ts` file into javascript
    - Understanding of `Core Types` like `number`, `string`, `boolean`, `array` and `object`
    - Understanding of `Tuples`, `Enums`, `Union` and `Literal/Custom` Types
    - Understanding of `void`, `undefined`, `unknown` and `never` Types
+ - Configs (`2-configs` folder)
+   - Adding `watch mode` to mantain updated changes and check possible errors before hand
+   - Create a typescript configuration file with `tsc --init` and tweak for a custom config
+   - Understand how Typescript compiles ES6+ code (like `let/const`, `arrow functions`, `default function parameters`, `spread operator` and `destructuring`)
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
