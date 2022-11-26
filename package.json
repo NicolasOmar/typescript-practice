@@ -14,7 +14,7 @@
   "homepage": "https://github.com/NicolasOmar/typescript-practice#readme",
   "scripts": {
     "setup-basics": "cd ./1-basics && npm i",
-    "setup-second": "cd ./2-second-project && npm i",
-    "setup-all": "npm i -g typescript && npm run setup-basics && npm run setup-second"
+    "setup-configs": "cd ./2-configs && npm i",
+    "setup-all": "npm i -g typescript && npm run setup-basics && npm run setup-configs"
   }
 }
