@@ -1,6 +1,6 @@
 {
   "name": "typescript-practice",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Repository created to record my practice learning Typescript",
   "repository": {
     "type": "git",
@@ -15,6 +15,7 @@
   "scripts": {
     "setup-basics": "cd ./1-basics && npm i",
     "setup-configs": "cd ./2-configs && npm i",
-    "setup-all": "npm i -g typescript && npm run setup-basics && npm run setup-configs"
+    "setup-classes": "cd ./3-classes-interfaces-types && npm i",
+    "setup-all": "npm i -g typescript && npm run setup-basics && npm run setup-configs && npm run setup-classes"
   }
 }

@@ -17,6 +17,7 @@ npm run setup-all
 | All | `npm run setup-all` |
 | Basics | `npm run setup-basics` |
 | Configs | `npm run setup-configs` |
+| Classes, Interfaces & Types | `npm run setup-classes` |
 
 ## How to run it
 To run any specific exercise, execute the following command in the project´s folder:
@@ -34,6 +35,7 @@ npm start
    - Adding `watch mode` to mantain updated changes and check possible errors before hand
    - Create a typescript configuration file with `tsc --init` and tweak for a custom config
    - Understand how Typescript compiles ES6+ code (like `let/const`, `arrow functions`, `default function parameters`, `spread operator` and `destructuring`)
+ - Classes, Interfaces & Types (`3-classes-interfaces-types` folder)
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
