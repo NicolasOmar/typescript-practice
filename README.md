@@ -42,6 +42,7 @@ npm start
    - How to use `getters` and `setters`
    - How to use `static methods`
    - Basic understanding of `Interfaces` and its implementation on `Classes` and other `Interfaces`
+   - Understanding and implementation of `Intersection Types`, `Type Guards`, `Discriminated Unions`, `Type Casting` and `Function Overloads`
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
