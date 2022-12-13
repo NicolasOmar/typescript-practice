@@ -36,11 +36,12 @@ npm start
    - Create a typescript configuration file with `tsc --init` and tweak for a custom config
    - Understand how Typescript compiles ES6+ code (like `let/const`, `arrow functions`, `default function parameters`, `spread operator` and `destructuring`)
  - Classes, Interfaces & Types (`3-classes-interfaces-types` folder)
-   - Basic understanding of `Class` creation with its properties and methods
+   - Basic understanding of `Classes` creation with its properties and methods
    - Know difference between a `public`, `private` and `protected` properties
    - Basic understanding of `class inheritance`
    - How to use `getters` and `setters`
    - How to use `static methods`
+   - Basic understanding of `Interfaces` and its implementation on `Classes` and other `Interfaces`
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |

@@ -18,7 +18,7 @@ class Department {
    * TO AVOID ASSIGNATION ERRORS LIKE LINES 24/25
   */
   describe(this: Department) {
-    console.warn(`The department is [${this.id}] ${this.name}`)
+    console.warn('[Classes]', `The department is [${this.id}] ${this.name}`)
   }
 
   addEmployee(employeeName: string | string[]) {
@@ -47,7 +47,7 @@ class ContractorDepartment extends Department {
   }
   
   printReports() {
-    console.warn(`The reports are ${this.reports.length > 0 ? this.reports.join(', ') : 'none'}`)
+    console.warn('[Classes]', `The reports are ${this.reports.length > 0 ? this.reports.join(', ') : 'none'}`)
   }
 
   addEmployee(employeeName: string) {
@@ -63,9 +63,9 @@ const newDepartment = new Department('D1', 'Human Resources')
 
 newDepartment.describe()
 newDepartment.addEmployee(['Max', 'Anna'])
-console.warn(Department.createNewEmployee('Nicolas'))
-console.warn(Department.fiscalYear)
-console.log(newDepartment)
+console.warn('[Classes]', Department.createNewEmployee('Nicolas'))
+console.warn('[Classes]', Department.fiscalYear)
+console.log('[Classes]', newDepartment)
 
 const inheritanceDepartment = new ContractorDepartment('CD1')
 
@@ -75,8 +75,8 @@ inheritanceDepartment.addEmployee('Anna')
 inheritanceDepartment.addReport('IT')
 inheritanceDepartment.addReport('Accounting')
 inheritanceDepartment.printReports()
-console.info(inheritanceDepartment.getLastVendor)
-console.log(inheritanceDepartment)
+console.info('[Classes]', inheritanceDepartment.getLastVendor)
+console.log('[Classes]', inheritanceDepartment)
 
 // CREATING A SHALLOW COPY OF AN OBJECT LIKE THIS WILL NOT CREATE AN ERROR
 // UNLESS YOU ADD THE THIS ARGUMENT
