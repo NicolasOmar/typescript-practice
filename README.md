@@ -18,6 +18,7 @@ npm run setup-all
 | Basics | `npm run setup-basics` |
 | Configs | `npm run setup-configs` |
 | Classes, Interfaces & Types | `npm run setup-classes` |
+| Generics & Decorators | `npm run setup-generics` |
 
 ## How to run it
 To run any specific exercise, execute the following command in the project´s folder:
@@ -43,13 +44,16 @@ npm start
    - How to use `static methods`
    - Basic understanding of `Interfaces` and its implementation on `Classes` and other `Interfaces`
    - Understanding and implementation of `Intersection Types`, `Type Guards`, `Discriminated Unions`, `Type Casting` and `Function Overloads`
+ - Generics & Decorators (`4-generics-decorators` folder)
+   - Basic understanding og `Generic Types`
+   - How to use multiple generic types in a function
+   - Understanding and implementation of `extends` and `keyof`
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
 | ------ | ------ |
-| `0.X.X` | Course hasn't been completed |
-| `X.0.X` | How many assignments/examples I have completed |
-| `X.X.0` | How many times I have updated the next assignment/example |
+| `X.0.0` | Course hasn't been completed |
+| `0.X.0` | How many assignments/examples I have completed |
 
 ## Other Practice Repos
 | Node | Angular | GraphQL | React |
