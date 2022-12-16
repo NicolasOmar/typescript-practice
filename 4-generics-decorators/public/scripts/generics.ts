@@ -77,3 +77,31 @@ multipleStorage.removeItem(0)
 
 console.info('[Generics]', textStorage.getItems())
 console.info('[Generics]', multipleStorage.getItems())
+
+// PARTIAL
+interface CourseGoal {
+  title: string
+  description: string
+  date: Date
+}
+
+// 'PARTIAL', AN UTILITY TYPE USED TO ASSIGN TO OBJECTS WHICH PROPERTIES ARE OPTIONALS
+// IN TIS CASE, YOU ARE CREATING THE OBJECT WITHOUT ASSIGN ANY VALUES, SO THERE IS A GOOD USE CASE
+// AT THE END, YOU HAVE TO MAKE A CASTING TO THE RETURNING OBJECT BECAUSE THE ORIGINAL TYPING WAS
+// THE PARTIAL YOU MENTIONED ONCE CREATED
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date
+): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {}
+  courseGoal.title = title
+  courseGoal.description = description
+  courseGoal.date = date
+
+  return courseGoal as CourseGoal
+}
+
+// 'READONLY', AN UTILITY TYPE USED TO AVOID A VARIABLE TO BE MODIFIED (AND LOCK IT TO OTHER PROGRAMMERS)
+const untouchableNames: Readonly<string[]> = ['Max', 'Mark']
+// untouchableNames.push('Jessica') // YOU CAN'T USE PUSH BECAUSE YOU ARE TRYING TO MODIFY AN READONLY VARIABLE

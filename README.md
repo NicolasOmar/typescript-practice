@@ -48,6 +48,9 @@ npm start
    - Basic understanding og `Generic Types`
    - How to use multiple generic types in a function
    - Understanding and implementation of `extends` and `keyof`
+   - Understanding and implementation of utitlies like `Partial` and `Readonly`
+   - Basic understanding of `Decorators`
+   - How to implement an template creation and setting by using a `Decorator Factory`
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
