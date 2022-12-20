@@ -1,0 +1,12 @@
+{
+  "name": "5-drag-and-drop",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "lite-server -c configs/server.json",
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

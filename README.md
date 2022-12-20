@@ -19,6 +19,7 @@ npm run setup-all
 | Configs | `npm run setup-configs` |
 | Classes, Interfaces & Types | `npm run setup-classes` |
 | Generics & Decorators | `npm run setup-generics` |
+| Practice Demo | `npm run setup-drag-and-drop` |
 
 ## How to run it
 To run any specific exercise, execute the following command in the project´s folder:
@@ -52,6 +53,7 @@ npm start
    - Basic understanding of `Decorators`
    - How to implement an template creation and setting by using a `Decorator Factory`
    - Ways of implement decorators such as `Properties`, `Set`, `Methods` and `Parameters`
+ - Practice Demo (`5-drag-and-drop` folder)
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
