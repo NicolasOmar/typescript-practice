@@ -51,6 +51,7 @@ npm start
    - Understanding and implementation of utitlies like `Partial` and `Readonly`
    - Basic understanding of `Decorators`
    - How to implement an template creation and setting by using a `Decorator Factory`
+   - Ways of implement decorators such as `Properties`, `Set`, `Methods` and `Parameters`
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
