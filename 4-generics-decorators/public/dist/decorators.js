@@ -93,17 +93,52 @@ const _printer = new Printer();
 const button = document.getElementById('printer-button');
 _printer.showMessage();
 button === null || button === void 0 ? void 0 : button.addEventListener('click', _printer.showMessage);
+const registeredValidators = {};
+function Required(target, propName) {
+    registeredValidators[target.constructor.name] = Object.assign(Object.assign({}, registeredValidators[target.constructor.name]), { [propName]: ['required'] });
+}
+function PositiveNumber(target, propName) {
+    registeredValidators[target.constructor.name] = Object.assign(Object.assign({}, registeredValidators[target.constructor.name]), { [propName]: ['positive'] });
+}
+function validate(_obj) {
+    let isValid = true;
+    const objValidatorsConfig = registeredValidators[_obj.constructor.name];
+    if (!objValidatorsConfig) {
+        return true;
+    }
+    for (const propName in objValidatorsConfig) {
+        for (const propValidator of (objValidatorsConfig[propName] || [])) {
+            switch (propValidator) {
+                case 'required':
+                    isValid = isValid && !!_obj[propName];
+                case 'positive':
+                    isValid = isValid && +_obj[propName] > 0;
+            }
+        }
+    }
+    return isValid;
+}
 class Course {
     constructor(_title, _price) {
         this.title = _title;
         this.price = _price;
     }
 }
+__decorate([
+    Required
+], Course.prototype, "title", void 0);
+__decorate([
+    PositiveNumber
+], Course.prototype, "price", void 0);
 const courseForm = document.querySelector('form');
 courseForm === null || courseForm === void 0 ? void 0 : courseForm.addEventListener('submit', event => {
     event.preventDefault();
     const titleElement = document.getElementById('title');
     const priceElement = document.getElementById('price');
     const createdCourse = new Course(titleElement.value, +priceElement.value);
+    if (!validate(createdCourse)) {
+        alert('Invalid input, please try again!');
+        return;
+    }
     console.warn('[Decorators]', createdCourse);
 });

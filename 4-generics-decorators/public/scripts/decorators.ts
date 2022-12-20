@@ -125,8 +125,60 @@ button?.addEventListener('click', _printer.showMessage)
 // INSTEAD USING THE BIND FUNCTIONALITY, YOU CAN IMPLEMENT IT IN A DECORATOR
 // button?.addEventListener('click', _printer.showMessage.bind(_printer))
 
+// ---------------------------------------------
+// VALIDATION LOGIC BASED ON DECORATORS
+// ---------------------------------------------
+
+interface ValidatorConfig {
+  [property: string]: {
+    [validatableProp: string]: string[]
+  }
+}
+
+const registeredValidators: ValidatorConfig = {}
+
+function Required(target: any, propName: string) {
+  // CLASSNAME = {}
+  registeredValidators[target.constructor.name] = {
+    ...registeredValidators[target.constructor.name],
+    [propName]: ['required']
+  }
+}
+
+function PositiveNumber(target: any, propName: string) {
+  // CLASSNAME = {}
+  registeredValidators[target.constructor.name] = {
+    ...registeredValidators[target.constructor.name],
+    [propName]: ['positive']
+  }
+}
+
+function validate(_obj: any) {
+  let isValid = true
+  const objValidatorsConfig = registeredValidators[_obj.constructor.name]
+  
+  if (!objValidatorsConfig) {
+    return true
+  }
+
+  for(const propName in objValidatorsConfig) {
+    for (const propValidator of (objValidatorsConfig[propName] || [])) {
+      switch (propValidator) {
+        case 'required':
+          isValid = isValid && !!_obj[propName]
+        case 'positive':
+          isValid = isValid && +_obj[propName] > 0
+      }
+    }
+  }
+
+  return isValid
+}
+
 class Course {
+  @Required
   title: string
+  @PositiveNumber
   price: number
 
   constructor(
@@ -146,5 +198,9 @@ courseForm?.addEventListener('submit', event => {
   const priceElement = document.getElementById('price') as HTMLInputElement
 
   const createdCourse = new Course(titleElement.value, +priceElement.value)
+  if (!validate(createdCourse)) {
+    alert('Invalid input, please try again!')
+    return
+  }
   console.warn('[Decorators]', createdCourse)
 })
