@@ -1,9 +1,10 @@
 {
-  "name": "3-classes-interfaces-types",
+  "name": "4-generics-decorators",
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "start": "tsc && lite-server -c configs/server.json",
+    "start": "lite-server -c configs/server.json",
+    "build": "tsc",
     "build:watch": "tsc -w"
   },
   "devDependencies": {
