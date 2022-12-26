@@ -54,6 +54,8 @@ npm start
    - How to implement an template creation and setting by using a `Decorator Factory`
    - Ways of implement decorators such as `Properties`, `Set`, `Methods` and `Parameters`
  - Practice Demo (`5-drag-and-drop` folder)
+   - Review of all concepts mentioned above
+   - Understanding and implementation a Drag and Drop event (from one point to the other)
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |

@@ -1,3 +1,15 @@
+// DRAG & DROP INTERFACES
+interface Draggable {
+  dragStartHandler(event: DragEvent): void
+  dragEndHandler(event: DragEvent): void
+}
+
+interface DragTarget {
+  dragOverHandler(event: DragEvent): void // YOU ARE DRAGGING A VALID DRAGTARGET
+  dropHandler(event: DragEvent): void // YOU ARE HANDLING THE DROP, UPDATING THE DATA
+  dragLeaveHandler(event: DragEvent): void // GIVES VISUAL FEEDBACK WHEN YOU STOP DRAGGING THE ELEMENT
+}
+
 enum ProjectStatus {
   Active,
   Finished
@@ -28,7 +40,7 @@ class State<T> {
 // PROJECT STATE MANAGEMENT CLASS
 class ProjectState extends State<Project> {
   // THE LIST OF CREATED PROJECTS
-  private projects: any[] = []
+  private projects: Project[] = []
   // USING A SINGLETON PATTERN, YOU CREATE A STATIC PROPERTY CALLED INSTANCE
   private static instance: ProjectState
 
@@ -60,8 +72,21 @@ class ProjectState extends State<Project> {
       ProjectStatus.Active
     )
     this.projects = [...this.projects, newProject]
-    // ONCE THE PROJECT HAVE BEEN ADDED TO THE ARRAY, IT WILL GIVE THE LISTENERS THE UPDATED
-    // ARRAY
+    this.updateListeners()
+  }
+
+  // METHOD TO CHANGE PROJECT'S STATUS
+  moveProject(projectId: string, newStatus: ProjectStatus) {
+    const _project = this.projects.find(_project => _project.id === projectId)
+    // THIS IF IS USED TO AVOID UNNECESARY RENDERING WHEN YOU ARE MOVING THE MENTIONED PROJECT
+    if (_project && _project.status !== newStatus)  {
+      _project.status = newStatus
+      this.updateListeners()
+    }
+  }
+
+  private updateListeners() {
+    // ONCE THE PROJECT HAVE BEEN ADDED TO THE ARRAY, IT WILL GIVE THE LISTENERS THE UPDATED ARRAY
     for (const listenerFn of this.listeners) {
       listenerFn([...this.projects])
     }
@@ -157,7 +182,7 @@ abstract class Component<T extends HTMLElement, U extends HTMLElement> {
 }
 
 // TO RENDER A SINGLE PROJECT ITEM
-class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
+class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements Draggable{
   private project: Project
 
   // INSTEAD PARSING this.project.people IN A METHOD, WE CAN USE A GETTER
@@ -178,18 +203,29 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
   }
 
   configure(): void {
+    this.element.addEventListener('dragstart', this.dragStartHandler)
+    this.element.addEventListener('dragleave', this.dragEndHandler)
+  }
+
+  renderContent(): void {
     // '!' MEANS THAT THE OBJECT OR REFERENCE BEFORE WILL NEVER BE NULL
     this.element.querySelector('h2')!.textContent = this.project.title
     this.element.querySelector('h3')!.textContent = `${this.persons} assigned`
     this.element.querySelector('p')!.textContent = this.project.description
   }
 
-  renderContent(): void {
-    
+  @AutoBind
+  dragStartHandler(event: DragEvent): void {
+    // YOU ARE DRAGGING THE ID, TO USE WHEN YOU WANT TO GET THE OBJECT FROM ONE LIST AND SEND IT TO THE OTHER
+    event.dataTransfer!.setData('text/plain', this.project.id)
+    event.dataTransfer!.effectAllowed = 'move'
   }
+  
+  @AutoBind
+  dragEndHandler(_: DragEvent): void {}
 }
 
-class ProjectList extends Component<HTMLDivElement, HTMLElement> {
+class ProjectList extends Component<HTMLDivElement, HTMLElement> implements DragTarget {
   assignedProjects: Project[]
 
   constructor(
@@ -202,6 +238,9 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
   }
   
   configure(): void {
+    this.element.addEventListener('dragover', this.dragOverHandler)
+    this.element.addEventListener('dragleave', this.dragLeaveHandler)
+    this.element.addEventListener('drop', this.dropHandler)
     globalProjectState.addListener((projects: Project[]) => {
       this.assignedProjects = projects.filter(_project => {
         return this.type === 'active'
@@ -210,7 +249,31 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
       })
       this.renderProjects()
     })
-    this.renderContent()
+  }
+
+  @AutoBind
+  dragOverHandler(event: DragEvent): void {
+    if (event.dataTransfer && event.dataTransfer.types[0] === 'text/plain') {
+      // YOU ARE PREVENT DEFAULT BEHAVIOR THAT BLOCKS THE USER TO DROP THE INFORMATION
+      event.preventDefault()
+      const listElem = this.element.querySelector('ul')!
+      listElem.classList.add('droppable')
+    }
+  }
+
+  @AutoBind
+  dropHandler(event: DragEvent): void {
+    const projectId = event.dataTransfer!.getData('text/plain')
+    globalProjectState.moveProject(
+      projectId,
+      this.type === 'active' ? ProjectStatus.Active : ProjectStatus.Finished
+    )
+  }
+
+  @AutoBind
+  dragLeaveHandler(_: DragEvent): void {
+    const listElem = this.element.querySelector('ul')!
+    listElem.classList.remove('droppable')
   }
 
   renderContent(): void {
