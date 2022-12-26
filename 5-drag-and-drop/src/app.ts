@@ -1,3 +1,67 @@
+enum ProjectStatus {
+  Active,
+  Finished
+}
+
+class Project {
+  constructor(
+    public id: string,
+    public title: string,
+    public description: string,
+    public people: number,
+    public status: ProjectStatus
+  ) {}
+}
+
+type Listener = (items: Project[]) => void
+
+// PROJECT STATE MANAGEMENT CLASS
+class ProjectState {
+  private listeners: Listener[] = []
+  // THE LIST OF CREATED PROJECTS
+  private projects: any[] = []
+  // USING A SINGLETON PATTERN, YOU CREATE A STATIC PROPERTY CALLED INSTANCE
+  private static instance: ProjectState
+  
+  // IN METHOD GETINSTANCE YOU ARE ASKING FOR THE ONLY CREATED INSTANCE OF PROJECT STATE
+  // IN CASE IS NOT CREATED, THE METHOD CREATED SUCH INSTANCE, OTHERWISE, IT RETURNS THE CREATED ONE
+  public static getInstance(): ProjectState {
+    if (this.instance) {
+      return this.instance
+    }
+
+    this.instance = new ProjectState()
+    return this.instance
+  }
+
+  public addProject(
+    title: string,
+    description: string,
+    people: number
+  ) {
+    const newProject = new Project(
+      Math.random().toString(),
+      title,
+      description,
+      people,
+      ProjectStatus.Active
+    )
+    this.projects = [...this.projects, newProject]
+    // ONCE THE PROJECT HAVE BEEN ADDED TO THE ARRAY, IT WILL GIVE THE LISTENERS THE UPDATED
+    // ARRAY
+    for (const listenerFn of this.listeners) {
+      listenerFn([...this.projects])
+    }
+  }
+
+  public addListener(listenerFn: Listener) {
+    this.listeners = [...this.listeners, listenerFn]
+  }
+}
+
+// AT SYSTEM START, YOU CREATE THE PROJECTSTATE INSTANCE TO HAVE ONLY ONE (AT GLOBAL LEVEL, SO TO SPEAK)
+const globalProjectState = ProjectState.getInstance()
+
 // INTERFACES
 interface Validatable {
   value: string | number,
@@ -47,6 +111,55 @@ function AutoBind(_: any, __: string | Symbol, descriptor: PropertyDescriptor) {
   return customDescriptor
 }
 
+class ProjectList {
+  // THIS PROP IS FOR HTML TEMPLATE
+  templateElement: HTMLTemplateElement
+  // THIS PROP IS FOR THE PLACE WHERE WE ARE GOING TO PUT THE HTML WE WANT
+  hostElement: HTMLDivElement
+  // THIS PROP IS FOR SELECT THE HTML ELEMENT WE WANT TO MOVE FROM THE TEMPLATE TO THE HOST
+  element: HTMLElement
+  assignedProjects: Project[]
+
+  constructor(
+    private type: 'active' | 'finished'
+  ) {
+    this.assignedProjects = []
+    this.templateElement = document.getElementById('project-list')! as HTMLTemplateElement
+    this.hostElement = document.getElementById('app')! as HTMLDivElement
+
+    const importedNode = document.importNode(this.templateElement.content, true)
+
+    this.element = importedNode.firstElementChild as HTMLElement
+    this.element.id = `${type}-projects`
+
+    globalProjectState.addListener((projects: Project[]) => {
+      this.assignedProjects = projects.filter(_project => _project.status === ProjectStatus.Active)
+      this.renderProjects()
+    })
+    this.attach()
+    this.renderContent()
+  }
+
+  private attach() {
+    this.hostElement.insertAdjacentElement('beforeend', this.element)
+  }
+
+  private renderContent() {
+    this.element.querySelector('ul')!.id = `${this.type}-projects-list`
+    this.element.querySelector('h2')!.textContent = `${this.type.toLocaleUpperCase()} PROJECTS`
+  }
+
+  private renderProjects() {
+    const listElem = document.getElementById(`${this.type}-projects-list`)! as HTMLUListElement
+    listElem.innerHTML = ''
+    for (const projectItem of this.assignedProjects) {
+      const listItem = document.createElement('li')
+      listItem.textContent = projectItem.title
+      listElem.appendChild(listItem)
+    }
+  }
+}
+
 class ProjectInput {
   // THIS PROP IS FOR HTML TEMPLATE
   templateElement: HTMLTemplateElement
@@ -71,7 +184,7 @@ class ProjectInput {
     this.titleInputElement = this.element.querySelector('#title') as HTMLInputElement
     this.descriptionInputElement = this.element.querySelector('#description') as HTMLInputElement
     this.peopleInputElement = this.element.querySelector('#people') as HTMLInputElement
-    //
+    // HERE YOU ARE SETTING THE FORM EVENT LISTENER WITH THE SUBMIT HANDLER METHOD
     this.configure()
     // CALL THE ATTACH METHOD TO MERGE/INSERT YOUR FORM FRAGMENT TO THE HOST
     this.attach()
@@ -121,12 +234,14 @@ class ProjectInput {
     const userInputs = this.gatherUserInput()
     
     if (Array.isArray(userInputs)) {
-      console.warn('[Drag and Drop]', userInputs)
+      // USING A SPREAD OPERATOR, YOU ARE SENDING THE INPUTS ARRAY AS A LIST OF PARAMETERS
+      // INSIDE THE ADDPROJECT METHOD
+      globalProjectState.addProject(...userInputs)
       this.clearInputs()
     }
   }
 
-  // MANTAIN CONCERN SEPARATION
+  // THOSE PRIVATE FUNCTIONS ARE HERE TO MANTAIN CONCERN SEPARATION
   private configure() {
     // YOU ARE BINDING THE SUBMITHANDLER IN ORDER TO FIX THE LEXICAL ENVIROMENT/SCOPE INSIDE THE METHOD
     this.element.addEventListener('submit', this.submitHandler)
@@ -139,3 +254,5 @@ class ProjectInput {
 }
 
 const newProjectForm = new ProjectInput()
+const activeProjectList = new ProjectList('active')
+const finishedProjectList = new ProjectList('finished')
