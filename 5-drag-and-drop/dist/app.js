@@ -120,7 +120,11 @@ class ProjectList extends Component {
     }
     configure() {
         globalProjectState.addListener((projects) => {
-            this.assignedProjects = projects.filter(_project => _project.status === ProjectStatus.Active);
+            this.assignedProjects = projects.filter(_project => {
+                return this.type === 'active'
+                    ? _project.status === ProjectStatus.Active
+                    : _project.status === ProjectStatus.Finished;
+            });
             this.renderProjects();
         });
         this.renderContent();
