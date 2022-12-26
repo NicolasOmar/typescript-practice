@@ -18,6 +18,6 @@
     "setup-classes": "cd ./3-classes-interfaces-types && npm i",
     "setup-generics": "cd ./4-generics-decorators && npm i",
     "setup-drag-and-drop": "cd ./5-drag-and-drop && npm i",
-    "setup-all": "npm i -g typescript && npm run setup-basics && npm run setup-configs && npm run setup-classes"
+    "setup-all": "npm i -g typescript && npm run setup-basics && npm run setup-configs && npm run setup-classes && npm run setup-drag-and-drop"
   }
 }
