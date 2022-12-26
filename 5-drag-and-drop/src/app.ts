@@ -156,6 +156,39 @@ abstract class Component<T extends HTMLElement, U extends HTMLElement> {
   abstract renderContent(): void
 }
 
+// TO RENDER A SINGLE PROJECT ITEM
+class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
+  private project: Project
+
+  // INSTEAD PARSING this.project.people IN A METHOD, WE CAN USE A GETTER
+  get persons() {
+    const _people = this.project.people
+    return `${_people} ${_people === 1 ? 'person' : 'persons'}`
+  }
+
+  constructor(
+    hostId: string,
+    _project: Project
+  ) {
+    super('single-project', hostId, false, _project.id)
+    this.project = _project
+
+    this.configure()
+    this.renderContent()
+  }
+
+  configure(): void {
+    // '!' MEANS THAT THE OBJECT OR REFERENCE BEFORE WILL NEVER BE NULL
+    this.element.querySelector('h2')!.textContent = this.project.title
+    this.element.querySelector('h3')!.textContent = `${this.persons} assigned`
+    this.element.querySelector('p')!.textContent = this.project.description
+  }
+
+  renderContent(): void {
+    
+  }
+}
+
 class ProjectList extends Component<HTMLDivElement, HTMLElement> {
   assignedProjects: Project[]
 
@@ -185,9 +218,11 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
     const listElem = document.getElementById(`${this.type}-projects-list`)! as HTMLUListElement
     listElem.innerHTML = ''
     for (const projectItem of this.assignedProjects) {
-      const listItem = document.createElement('li')
-      listItem.textContent = projectItem.title
-      listElem.appendChild(listItem)
+      // INSTEAD CREATING A NEW ELEMENT MANUALLY, YOU INSTANTIATE IT IN A CLASS WHICH WILL RENDER THE ITEM
+      new ProjectItem(this.element.querySelector('ul')!.id, projectItem)
+      // const listItem = document.createElement('li')
+      // listItem.textContent = projectItem.title
+      // listElem.appendChild(listItem)
     }
   }
 }
