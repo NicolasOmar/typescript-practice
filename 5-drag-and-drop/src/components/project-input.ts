@@ -1,10 +1,10 @@
 // COMPONENTS
-import { Component } from "./base-component.js"
+import { Component } from "./base-component"
 // MODELS & INTERFACES
-import { globalProjectState } from "../state/project-state.js"
+import { globalProjectState } from "../state/project-state"
 // DECORATORS
-import { AutoBind } from "../decorators/autobind.js"
-import { Validatable, validate } from "../utils/validation.js"
+import { AutoBind } from "../decorators/autobind"
+import { Validatable, validate } from "../utils/validation"
 
 // YOU CAN USE REFERENCE AND NAMESPACES TO LINK DEPENDENCIES IN EACH FILE, BUT IS PRONE TO ERRORS WITHOUT
 // A PROPER REFERENCE OF WHICH FILE/FEATURE IS MISSING IN WHICH FILE

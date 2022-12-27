@@ -1,10 +1,10 @@
 // COMPONENTS
-import { Component } from "./base-component.js"
+import { Component } from "./base-component"
 // MODELS & INTERFACES
-import { Project } from "../models/models.js"
-import { Draggable } from "../models/interfaces.js"
+import { Project } from "../models/models"
+import { Draggable } from "../models/interfaces"
 // DECORATORS
-import { AutoBind } from "../decorators/autobind.js"
+import { AutoBind } from "../decorators/autobind"
 
 // YOU CAN USE REFERENCE AND NAMESPACES TO LINK DEPENDENCIES IN EACH FILE, BUT IS PRONE TO ERRORS WITHOUT
 // A PROPER REFERENCE OF WHICH FILE/FEATURE IS MISSING IN WHICH FILE

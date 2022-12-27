@@ -1,5 +1,5 @@
 // MODELS & INTERFACES
-import { Project, ProjectStatus } from "../models/models.js"
+import { Project, ProjectStatus } from "../models/models"
 
 // THE TYPE OF STATE IN T WILL SET WHICH KIND OF DATA WILL BE STORED IN THE LISTENER CLASS
 type Listener<T> = (items: T[]) => void
