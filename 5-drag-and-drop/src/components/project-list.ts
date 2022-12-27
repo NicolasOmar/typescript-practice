@@ -1,11 +1,22 @@
-/// <reference path="base-component.ts" />
-/// <reference path="../decorators/autobind.ts" />
-/// <reference path="../state/project-state.ts" />
-/// <reference path="../models/models.ts" />
-/// <reference path="../models/interfaces.ts" />
+// COMPONENTS
+import { Component } from "./base-component.js"
+import { ProjectItem } from "./project-item.js"
+// MODELS & INTERFACES
+import { Project, ProjectStatus } from "../models/models.js"
+import { DragTarget } from "../models/interfaces.js"
+import { globalProjectState } from "../state/project-state.js"
+// DECORATORS
+import { AutoBind } from "../decorators/autobind.js"
 
-namespace App {
-  export class ProjectList extends Component<HTMLDivElement, HTMLElement> implements DragTarget {
+// YOU CAN USE REFERENCE AND NAMESPACES TO LINK DEPENDENCIES IN EACH FILE, BUT IS PRONE TO ERRORS WITHOUT
+// A PROPER REFERENCE OF WHICH FILE/FEATURE IS MISSING IN WHICH FILE
+// /// <reference path="base-component.ts" />
+// /// <reference path="../decorators/autobind.ts" />
+// /// <reference path="../state/project-state.ts" />
+// /// <reference path="../models/models.ts" />
+// /// <reference path="../models/interfaces.ts" />
+
+export class ProjectList extends Component<HTMLDivElement, HTMLElement> implements DragTarget {
     assignedProjects: Project[]
 
     constructor(
@@ -73,4 +84,3 @@ namespace App {
       }
     }
   }
-}

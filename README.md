@@ -56,7 +56,7 @@ npm start
  - Practice Demo (`5-drag-and-drop` folder)
    - Review of all concepts mentioned above
    - Understanding and implementation a Drag and Drop event (from one point to the other)
-   - How to split code using `namespaces`
+   - How to split code using `namespaces` and solve its possible problems with `ES6 modules`
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
