@@ -1,8 +1,6 @@
 import React, { useRef } from "react"
-
-interface NewTodoInterface {
-  onAddTodo: (todoText: string) => void
-}
+// INTERFACES
+import { NewTodoInterface } from "../interfaces/todo.model"
 
 const NewTodo: React.FC<NewTodoInterface> = ({ onAddTodo }) => {
   // INSTEAD USING STATES (FOR THIS EXERCISE), I GET THE VALUE INFO BY USING 'USEREF'

@@ -65,6 +65,8 @@ npm start
    - Use [Axios](https://www.npmjs.com/package/axios) to make API calls
    - How to use Javascript-based libraries in Typescript by using `@types/[LIBRARY_NAME]` (in this case, using [googlemaps types](https://www.npmjs.com/package/@types/google.maps))
  - React & Node (`7-react-and-node` folder)
+   - How to create a React project with Typescript installed using [create-react-app](https://create-react-app.dev/docs/adding-typescript)
+   - How to use React features such as `useState`, `functional components` and `props` with TS
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
