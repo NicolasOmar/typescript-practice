@@ -19,7 +19,8 @@ npm run setup-all
 | Configs | `npm run setup-configs` |
 | Classes, Interfaces & Types | `npm run setup-classes` |
 | Generics & Decorators | `npm run setup-generics` |
-| Practice Demo | `npm run setup-drag-and-drop` |
+| Practice Demo #1 | `npm run setup-drag-and-drop` |
+| Practice Demo #2 | `npm run setup-select-and-share` |
 
 ## How to run it
 To run any specific exercise, execute the following command in the project´s folder:
@@ -53,11 +54,15 @@ npm start
    - Basic understanding of `Decorators`
    - How to implement an template creation and setting by using a `Decorator Factory`
    - Ways of implement decorators such as `Properties`, `Set`, `Methods` and `Parameters`
- - Practice Demo (`5-drag-and-drop` folder)
+ - Practice Demo #1 (`5-drag-and-drop` folder)
    - Review of all concepts mentioned above
    - Understanding and implementation a Drag and Drop event (from one point to the other)
    - How to split code using `namespaces` and solve its possible problems with `ES6 modules`
    - Basic understanding and implementation of `Webpack` (configuration for development and production environments)
+ - Practice Demo #2 (`6-select-and-share` folder)
+   - Use Google [GeoCoding API](https://developers.google.com/maps/documentation/geocoding/overview) to get information from places
+   - Use [Axios](https://www.npmjs.com/package/axios) to make API calls
+   - How to use Javascript-based libraries in Typescript by using `@types/[LIBRARY_NAME]` (in this case, using [googlemaps types](https://www.npmjs.com/package/@types/google.maps))
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
