@@ -67,12 +67,11 @@ npm start
  - React & Node (`7-react-and-node` folder)
    - How to create a React project with Typescript installed using [create-react-app](https://create-react-app.dev/docs/adding-typescript)
    - How to use React features such as `useState`, `functional components` and `props` with TS
+   - How to compile work with Typescript in Node with [tsc](https://www.npmjs.com/package/tsc) and [nodemon](https://www.npmjs.com/package/nodemon)
+   - How to use Express features such as `Routes` and `Resquests` with TS
 
-## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
-| Number | Meaning |
-| ------ | ------ |
-| `X.0.0` | Course hasn't been completed |
-| `0.X.0` | How many assignments/examples I have completed |
+## Version (currently v1.0.0)
+**This course has been completed on 28/12/2022 - [Certificate](https://www.udemy.com/certificate/UC-20d6a3bb-38d1-47da-bc4b-15ddbefdac9a/)**
 
 ## Other Practice Repos
 | Node | Angular | GraphQL | React |
