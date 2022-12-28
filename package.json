@@ -1,6 +1,6 @@
 {
   "name": "typescript-practice",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "Repository created to record my practice learning Typescript",
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
     "setup-generics": "cd ./4-generics-decorators && npm i",
     "setup-drag-and-drop": "cd ./5-drag-and-drop && npm i",
     "setup-select-and-share": "cd ./6-select-and-share && npm i",
-    "setup-all": "npm i -g typescript && npm run setup-basics && npm run setup-configs && npm run setup-classes && npm run setup-generics && npm run setup-drag-and-drop && npm run setup-select-and-share"
+    "setup-react-and-node": "cd ./7-react-and-node/react && npm i && cd ../node && npm i",
+    "setup-all": "npm i -g typescript && npm run setup-basics && npm run setup-configs && npm run setup-classes && npm run setup-generics && npm run setup-drag-and-drop && npm run setup-select-and-share && npm run setup-react-and-node"
   }
 }
