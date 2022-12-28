@@ -60,8 +60,9 @@ npm start
    - How to split code using `namespaces` and solve its possible problems with `ES6 modules`
    - Basic understanding and implementation of `Webpack` (configuration for development and production environments)
  - Practice Demo #2 (`6-select-and-share` folder)
-   - How to use Javascript-based libraries in Typescript by using `@types/[LIBRARY_NAME]`
-   - Use `class-transformer` and `class-validator` libraries to handle data
+   - Use Google [GeoCoding API](https://developers.google.com/maps/documentation/geocoding/overview) to get information from places
+   - Use [Axios](https://www.npmjs.com/package/axios) to make API calls
+   - How to use Javascript-based libraries in Typescript by using `@types/[LIBRARY_NAME]` (in this case, using [googlemaps types](https://www.npmjs.com/package/@types/google.maps))
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |

@@ -2,11 +2,13 @@
   "name": "6-select-and-share",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack-dev-server",
     "build": "webpack",
     "build:prod": "webpack --config webpack.config.prod.js"
   },
   "devDependencies": {
+    "@types/googlemaps": "^3.43.3",
+    "axios": "^1.2.1",
     "clean-webpack-plugin": "^4.0.0",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
