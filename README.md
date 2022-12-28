@@ -21,6 +21,7 @@ npm run setup-all
 | Generics & Decorators | `npm run setup-generics` |
 | Practice Demo #1 | `npm run setup-drag-and-drop` |
 | Practice Demo #2 | `npm run setup-select-and-share` |
+| React & Node | `npm run setup-react-and-node` |
 
 ## How to run it
 To run any specific exercise, execute the following command in the project´s folder:
@@ -63,6 +64,7 @@ npm start
    - Use Google [GeoCoding API](https://developers.google.com/maps/documentation/geocoding/overview) to get information from places
    - Use [Axios](https://www.npmjs.com/package/axios) to make API calls
    - How to use Javascript-based libraries in Typescript by using `@types/[LIBRARY_NAME]` (in this case, using [googlemaps types](https://www.npmjs.com/package/@types/google.maps))
+ - React & Node (`7-react-and-node` folder)
 
 ## Version (currently ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
