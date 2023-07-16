@@ -6,7 +6,7 @@ Repository created to record my practice learning React with exercises based on 
 - [Requirements](#requirements)
 - [Setup](#setup)
 - [How to run it](#how-to-run-it)
-- [Repo Structure & what i learned in each exercise](#repo-structure--what-i-learned-in-each-exercise)
+- [Repo structure & what i learned in each exercise](#repo-structure--what-i-learned-in-each-exercise)
 - [Other practice repos](#other-practice-repos)
 
 ## Status
