@@ -13,7 +13,7 @@ Repository created to record my practice learning React with exercises based on 
 - Current repo's version is ![Typescript practice version](https://img.shields.io/github/package-json/v/nicolasomar/typescript-practice?color=success&label=%20&style=flat-square)
 - **This course has been completed on 28/12/2022 - [Certificate](https://www.udemy.com/certificate/UC-20d6a3bb-38d1-47da-bc4b-15ddbefdac9a/)**
 
-### Why it has not any updated dependencies?
+### Why does it not have any updated dependencies?
 After finishing its related Udemy course, I archive this repository and unarchive it when I start a new training and add a link in the [`Other practice repos`](#other-practice-repos) section referring to its new repo. But I don't update any associated dependency due to technology changes during the years between each practice, and the produced code which works with the mentioned [`requirements`](#requirements).
 
 ## Requirements
@@ -44,48 +44,48 @@ To run any specific exercise, execute the following command in the project´s fo
 npm start
 ```
 
-## Repo structure & what i learned in each exercise
+## Repo structure & what I learned in each exercise
  - Basics (`1-basics` folder)
-   - Create, code and compile a `.ts` file into javascript
-   - Understanding of `Core Types` like `number`, `string`, `boolean`, `array` and `object`
-   - Understanding of `Tuples`, `Enums`, `Union` and `Literal/Custom` Types
-   - Understanding of `void`, `undefined`, `unknown` and `never` Types
+   - Create, code, and compile a `.ts` file into JavaScript.
+   - Understanding of `Core Types` like `number`, `string`, `boolean`, `array`, and `object`.
+   - Understanding of `Tuples`, `Enums`, `Union`, and `Literal/Custom` Types.
+   - Understanding of `void`, `undefined`, `unknown`, and `never` Types.
  - Configs (`2-configs` folder)
-   - Adding `watch mode` to mantain updated changes and check possible errors before hand
-   - Create a typescript configuration file with `tsc --init` and tweak for a custom config
-   - Understand how Typescript compiles ES6+ code (like `let/const`, `arrow functions`, `default function parameters`, `spread operator` and `destructuring`)
+   - Adding `watch mode` to maintain updated changes and check possible errors beforehand.
+   - Create a typescript configuration file with `tsc --init` and tweak for a custom config.
+   - Understand how Typescript compiles ES6+ code (like `let/const`, `arrow functions`, `default function parameters`, `spread operator`, and `destructuring`).
  - Classes, Interfaces & Types (`3-classes-interfaces-types` folder)
-   - Basic understanding of `Classes` creation with its properties and methods
-   - Know difference between a `public`, `private` and `protected` properties
-   - Basic understanding of `class inheritance`
-   - How to use `getters` and `setters`
-   - How to use `static methods`
-   - Basic understanding of `Interfaces` and its implementation on `Classes` and other `Interfaces`
-   - Understanding and implementation of `Intersection Types`, `Type Guards`, `Discriminated Unions`, `Type Casting` and `Function Overloads`
+   - Basic understanding of `Classes` creation with its properties and methods.
+   - Know the difference between a `public`, `private`, and `protected` property.
+   - Basic understanding of `class inheritance`.
+   - How to use `getters` and `setters`.
+   - How to use `static methods`.
+   - Basic understanding of `Interfaces` and their implementation on `Classes` and other `Interfaces`.
+   - Understanding and implementation of `Intersection Types`, `Type Guards`, `Discriminated Unions`, `Type Casting` and `Function Overloads`.
  - Generics & Decorators (`4-generics-decorators` folder)
-   - Basic understanding og `Generic Types`
-   - How to use multiple generic types in a function
-   - Understanding and implementation of `extends` and `keyof`
-   - Understanding and implementation of utitlies like `Partial` and `Readonly`
-   - Basic understanding of `Decorators`
-   - How to implement an template creation and setting by using a `Decorator Factory`
-   - Ways of implement decorators such as `Properties`, `Set`, `Methods` and `Parameters`
+   - Basic understanding og `Generic Types`.
+   - How to use multiple generic types in a function.
+   - Understanding and implementation of `extends` and `keyof`.
+   - Understanding and implementation of utilities like `Partial` and `Readonly`.
+   - Basic understanding of `Decorators`.
+   - How to implement a template creation and setting by using a `Decorator Factory`.
+   - Ways of implementing decorators such as `Properties`, `Set`, `Methods`, and `Parameters`.
  - Practice Demo #1 (`5-drag-and-drop` folder)
-   - Review of all concepts mentioned above
-   - Understanding and implementation a Drag and Drop event (from one point to the other)
-   - How to split code using `namespaces` and solve its possible problems with `ES6 modules`
-   - Basic understanding and implementation of `Webpack` (configuration for development and production environments)
+   - Review of all concepts mentioned above.
+   - Understanding and implementing a drag-and-drop event (from one point to the other).
+   - How to split code using `namespaces` and solve its possible problems with `ES6 modules`.
+   - Basic understanding and implementation of `Webpack` (configuration for development and production environments).
  - Practice Demo #2 (`6-select-and-share` folder)
-   - Use Google [GeoCoding API](https://developers.google.com/maps/documentation/geocoding/overview) to get information from places
-   - Use [Axios](https://www.npmjs.com/package/axios) to make API calls
-   - How to use Javascript-based libraries in Typescript by using `@types/[LIBRARY_NAME]` (in this case, using [googlemaps types](https://www.npmjs.com/package/@types/google.maps))
+   - Use Google [GeoCoding API](https://developers.google.com/maps/documentation/geocoding/overview) to get information from places.
+   - Use [Axios](https://www.npmjs.com/package/axios) to make API calls.
+   - How to use Javascript-based libraries in Typescript by using `@types/[LIBRARY_NAME]` (in this case, using [googlemaps types](https://www.npmjs.com/package/@types/google.maps)).
  - React & Node (`7-react-and-node` folder)
-   - How to create a React project with Typescript installed using [create-react-app](https://create-react-app.dev/docs/adding-typescript)
-   - How to use React features such as `useState`, `functional components` and `props` with TS
-   - How to compile work with Typescript in Node with [tsc](https://www.npmjs.com/package/tsc) and [nodemon](https://www.npmjs.com/package/nodemon)
-   - How to use Express features such as `Routes` and `Resquests` with TS
+   - How to create a React project with Typescript installed using [create-react-app](https://create-react-app.dev/docs/adding-typescript).
+   - How to use React features such as `useState`, `functional components` and `props` with TS.
+   - How to compile work with Typescript in Node with [tsc](https://www.npmjs.com/package/tsc) and [nodemon](https://www.npmjs.com/package/nodemon).
+   - How to use Express features such as `Routes` and `Resquests` with TS.
 
 ## Other practice repos
-| Node | Angular | GraphQL | React | HTML & CSS | Styling | Next.js | Python | Docker |
+| Node | React | Angular | GraphQL | HTML & CSS | Styling | NextJS | Python | NestJS |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://cdn.simpleicons.org/node.js" title="Node Practice Repo" alt="Node Practice Repo" width="48px">](https://github.com/NicolasOmar/node-practice) | [<img src="https://cdn.simpleicons.org/angular" title="Angular Practice Repo" alt="Angular Practice Repo" width="48px">](https://github.com/NicolasOmar/angular-practice) | [<img src="https://cdn.simpleicons.org/graphql" title="GraphQL Practice Repo" alt="GraphQL Practice Repo" width="48px">](https://github.com/NicolasOmar/graphql-practice) | [<img src="https://cdn.simpleicons.org/react" title="React Practice Repo" alt="React Practice Repo" width="48px">](https://github.com/NicolasOmar/react-practice) | [<img src="https://cdn.simpleicons.org/html5" title="HTML and CSS Practice Repo" alt="HTML and CSS Practice Repo" width="48px">](https://github.com/NicolasOmar/html-css-practice) | [<img src="https://cdn.simpleicons.org/sass" title="Styling Practice Repo" alt="Styling Practice Repo" width="48px">](https://github.com/NicolasOmar/styling-practice) | [<img src="https://cdn.simpleicons.org/nextdotjs" title="Next.js Practice Repo" alt="Next.js Practice Repo" width="48px">](https://github.com/NicolasOmar/next-practice) | [<img src="https://cdn.simpleicons.org/python" title="Python Practice Repo" alt="Python Practice Repo" width="48px">](https://github.com/NicolasOmar/python-practice) | [<img src="https://cdn.simpleicons.org/docker" title="Docker Practice Repo" alt="Docker Practice Repo" width="48px">](https://github.com/NicolasOmar/docker-practice) |
+| [<img src="https://cdn.simpleicons.org/node.js" title="Node Practice Repo" alt="Node Practice Repo" width="48px">](https://github.com/NicolasOmar/node-practice) | [<img src="https://cdn.simpleicons.org/react" title="React Practice Repo" alt="React Practice Repo" width="48px">](https://github.com/NicolasOmar/react-practice) | [<img src="https://cdn.simpleicons.org/angular" title="Angular Practice Repo" alt="Angular Practice Repo" width="48px">](https://github.com/NicolasOmar/angular-practice) | [<img src="https://cdn.simpleicons.org/graphql" title="GraphQL Practice Repo" alt="GraphQL Practice Repo" width="48px">](https://github.com/NicolasOmar/graphql-practice) | [<img src="https://cdn.simpleicons.org/html5" title="HTML and CSS Practice Repo" alt="HTML and CSS Practice Repo" width="48px">](https://github.com/NicolasOmar/html-css-practice) | [<img src="https://cdn.simpleicons.org/sass" title="Styling Practice Repo" alt="Styling Practice Repo" width="48px">](https://github.com/NicolasOmar/styling-practice) | [<img src="https://cdn.simpleicons.org/nextdotjs" title="NextJS Practice Repo" alt="NextJS Practice Repo" width="48px">](https://github.com/NicolasOmar/next-practice) | [<img src="https://cdn.simpleicons.org/python" title="Python Practice Repo" alt="Python Practice Repo" width="48px">](https://github.com/NicolasOmar/python-practice) | [<img src="https://cdn.simpleicons.org/nestjs" title="NestJS Practice Repo" alt="NestJS Practice Repo" width="48px">](https://github.com/NicolasOmar/nest-practice) |
